@@ -42,7 +42,7 @@ import { logActivity } from '../utils/logger';
 import type { SystemAccount, Customer } from '../App';
 
 const { Text } = Typography;
-const BASE_API_URL = import.meta.env.VITE_API_URL || 'https://xedientungphuong.vercel.app/api';
+const BASE_API_URL = import.meta.env.VITE_API_URL || 'https://xemaytungphuong-backend.vercel.app/api';
 
 // Danh sách 4 kho/chi nhánh chuẩn
 export const BRANCHES = [
@@ -478,25 +478,25 @@ export const InventoryManagement = ({ currentUser, customers = [] }: InventoryMa
     const sampleData = [
       {
         'Ngày Nhập': dayjs().format('YYYY-MM-DD'),
-        'Hãng': 'Yadea',
-        'Số Loại': 'Xe máy điện',
-        'Tên Xe': 'I8',
-        'Màu Xe': 'Trắng Sữa',
-        'Số Khung': 'RL9Y5DGMHTFEU1001',
-        'Số Acquy - PIN': '60V26Ah-YADEA01',
-        'Nhà Cung Cấp': 'Công ty Yadea Việt Nam',
+        'Hãng': 'Honda',
+        'Số Loại': 'Xe tay ga',
+        'Tên Xe': 'Vision',
+        'Màu Xe': 'Trắng Đen',
+        'Số Khung': 'RLHJK0300P123456',
+        'Số Máy / Acquy': 'JK03E-0123456',
+        'Nhà Cung Cấp': 'Công ty Honda Việt Nam',
         'Chi Nhánh': 'Chi nhánh 1',
         'Ghi Chú': 'Lô xe mới nhập',
       },
       {
         'Ngày Nhập': dayjs().format('YYYY-MM-DD'),
-        'Hãng': 'Yadea',
-        'Số Loại': 'Xe đạp điện',
-        'Tên Xe': 'OVA',
-        'Màu Xe': 'Vàng Cam Đất',
-        'Số Khung': 'RL9Y5DGMHTFEU1002',
-        'Số Acquy - PIN': '48V12Ah-YADEA02',
-        'Nhà Cung Cấp': 'Công ty Yadea Việt Nam',
+        'Hãng': 'Yamaha',
+        'Số Loại': 'Xe số',
+        'Tên Xe': 'Wave Alpha',
+        'Màu Xe': 'Đỏ Đen',
+        'Số Khung': 'RLHJC5100P654321',
+        'Số Máy / Acquy': 'JC51E-0654321',
+        'Nhà Cung Cấp': 'Công ty Yamaha Motor',
         'Chi Nhánh': 'Kho chợ',
         'Ghi Chú': 'Lô xe mới nhập',
       },
@@ -548,7 +548,7 @@ export const InventoryManagement = ({ currentUser, customers = [] }: InventoryMa
               model: String(row['Tên Xe'] || row['Model Xe'] || row['model_xe'] || row['Model'] || '').trim(),
               color: String(row['Màu Xe'] || row['Màu Sắc'] || row['mau_sac'] || row['Màu'] || 'Tiêu chuẩn').trim(),
               frame_number: String(row['Số Khung'] || row['so_khung'] || row['SK'] || '').trim(),
-              battery_number: String(row['Số Acquy - PIN'] || row['Số Acquy'] || row['So Pin'] || row['battery_number'] || '').trim(),
+              battery_number: String(row['Số Máy / Acquy'] || row['Số Máy'] || row['Số Acquy - PIN'] || row['Số Acquy'] || row['So Pin'] || row['battery_number'] || '').trim(),
               supplier: String(row['Nhà Cung Cấp'] || row['nha_cung_cap'] || '').trim(),
               branch: branchName,
               imported_at: parsedDate,
@@ -1108,7 +1108,7 @@ export const InventoryManagement = ({ currentUser, customers = [] }: InventoryMa
                       width: 110,
                     },
                     {
-                      title: 'SỐ ACQUY - PIN',
+                      title: 'SỐ MÁY / ACQUY',
                       dataIndex: 'battery_number',
                       key: 'battery_number',
                       render: (bat) => bat ? <Text style={{ color: '#108ee9' }}>{bat}</Text> : <Text type="secondary" italic>--</Text>,
@@ -1199,32 +1199,32 @@ export const InventoryManagement = ({ currentUser, customers = [] }: InventoryMa
 
           {/* 1. Hãng */}
           <Form.Item name="brand" label="Hãng" rules={[{ required: true, message: 'Nhập hãng xe!' }]}>
-            <Input placeholder="Ví dụ: Yadea, Vinfast, Dkbike..." />
+            <Input placeholder="Ví dụ: Honda, Yamaha, Suzuki, SYM..." />
           </Form.Item>
 
           {/* 2. Số Loại */}
           <Form.Item name="model_type" label="Số Loại">
-            <Input placeholder="Ví dụ: Xe máy điện, Xe đạp điện..." />
+            <Input placeholder="Ví dụ: Xe tay ga, Xe số, Xe côn tay..." />
           </Form.Item>
 
           {/* 3. Tên Xe */}
           <Form.Item name="model" label="Tên Xe" rules={[{ required: true, message: 'Nhập tên xe / model!' }]}>
-            <Input placeholder="Ví dụ: I8, Feliz, Xzone..." />
+            <Input placeholder="Ví dụ: Vision, Wave Alpha, Air Blade, Exciter..." />
           </Form.Item>
 
           {/* 4. Màu Xe */}
           <Form.Item name="color" label="Màu Xe" rules={[{ required: true, message: 'Nhập màu xe!' }]}>
-            <Input placeholder="Ví dụ: Trắng, Đỏ, Xám bóng..." />
+            <Input placeholder="Ví dụ: Trắng, Đỏ, Xám bóng, Đen nhám..." />
           </Form.Item>
 
           {/* 5. Số Khung */}
           <Form.Item name="frame_number" label="Số Khung" rules={[{ required: true, message: 'Nhập số khung!' }]}>
-            <Input placeholder="Nhập chính xác số khung xe..." />
+            <Input placeholder="Nhập chính xác số khung xe (VIN)..." />
           </Form.Item>
 
-          {/* 6. Số Acquy - PIN */}
-          <Form.Item name="battery_number" label="Số Acquy - PIN">
-            <Input placeholder="Ví dụ: 60V26Ah, Pin Lithium 48V..." />
+          {/* 6. Số Máy / Acquy */}
+          <Form.Item name="battery_number" label="Số Máy / Acquy">
+            <Input placeholder="Ví dụ: JK03E-0123456 hoặc số acquy..." />
           </Form.Item>
 
           {/* 7. Nhà Cung Cấp */}

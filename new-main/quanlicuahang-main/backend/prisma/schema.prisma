@@ -19,30 +19,102 @@ model Branch {
 }
 
 model Customer {
-  id            Int      @id @default(autoincrement())
-  fullName      String
+  id              Int      @id @default(autoincrement())
+  fullName        String
+  phone           String?
+  address         String?
+  vehicleName     String?
+  color           String?
+  price           Int?
+  staffName       String?
+  branchName      String?
+  imageUrl        String?
+  frameNumber     String?
+  batteryNumber   String?
+  formTimestamp   String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  installmentBank String?
+  debtAmount      Decimal? @default(0) @db.Decimal
+  email           String?
+  idCardNumber    String?
+  idCardIssueDate String?
+  prepaidAmount   Decimal? @default(0) @db.Decimal
+  note            String?
+  promotion       String?
+}
+
+model Account {
+  id         BigInt    @id(map: "SystemAccount_pkey") @default(autoincrement())
+  username   String    @unique(map: "SystemAccount_username_key")
+  password   String
+  fullname   String
+  role       String    @default("staff")
+  branch     String
+  created_at DateTime? @default(now()) @db.Timestamptz(6)
+}
+
+model ActivityLog {
+  id          BigInt    @id @default(autoincrement())
+  username    String
+  full_name   String?
+  branch      String?
+  action_type String
+  description String
+  ip_address  String?
+  created_at  DateTime? @default(now()) @db.Timestamptz(6)
+
+  @@index([created_at(sort: Desc)], map: "idx_activitylog_created")
+}
+
+model Customers {
+  id            BigInt    @id @default(autoincrement())
+  fullname      String?
   phone         String?
   address       String?
-  vehicleName   String?
+  branch        String?
+  model         String?
   color         String?
-  price         Int?
-  staffName     String?
-  branchName    String?
-  frameNumber   String?
-  batteryNumber String?
-  imageUrl      String?
-  formTimestamp String?
+  framenumber   String?
+  batterynumber String?
+  price         Decimal?  @db.Decimal
+  prepay        Decimal?  @db.Decimal
+  debt          Decimal?  @db.Decimal
+  paymentmethod String?
+  saledate      DateTime? @default(now()) @db.Timestamptz(6)
+  created_at    DateTime? @default(now()) @db.Timestamptz(6)
 
-  // ➕ Thêm các trường mới
-  installmentBank String?  // Ngân hàng góp
-  debtAmount      Int?     // Số tiền còn nợ
-  email           String?  // Email
-  idCardNumber    String?  // Căn cước công dân
-  idCardIssueDate String?  // Ngày cấp CCCD
-  prepaidAmount Int?
-  promotion       String?
-  note          String?
+  @@index([framenumber], map: "idx_customers_frame")
+}
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model Inventory {
+  id             BigInt    @id @default(autoincrement())
+  frame_number   String    @unique
+  battery_number String?
+  branch         String
+  brand          String
+  model          String
+  color          String
+  status         String    @default("in_stock")
+  imported_at    DateTime? @default(now()) @db.Timestamptz(6)
+  updated_at     DateTime? @default(now()) @db.Timestamptz(6)
+  supplier       String?
+  model_type     String?
+
+  @@index([branch], map: "idx_inventory_branch")
+  @@index([frame_number], map: "idx_inventory_frame")
+}
+
+model InventoryLog {
+  id          BigInt    @id @default(autoincrement())
+  type        String
+  brand       String
+  model       String
+  color       String
+  quantity    Int?      @default(1)
+  from_branch String?
+  to_branch   String?
+  note        String?
+  created_by  String?
+  created_at  DateTime? @default(now()) @db.Timestamptz(6)
 }

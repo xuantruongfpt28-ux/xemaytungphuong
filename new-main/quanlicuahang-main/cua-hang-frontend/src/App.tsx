@@ -322,12 +322,12 @@ const executePrintContract = (customer: Customer) => {
             <tbody>
               <tr>
                 <td style="width: 56%; vertical-align: top;">
-                  <strong style="font-size: 11.5pt;">CÔNG TY TNHH TPMOTOR TÙNG PHƯỢNG EV</strong><br />
+                  <strong style="font-size: 11.5pt;">CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG</strong><br />
                   <span style="font-size: 9.5pt; line-height: 1.25;">
-                    <strong>CN Xe Điện Tổng Hợp:</strong><br />
-                    102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh An Giang (0866.97.98.41)<br />
-                    <strong>CN2 Xe Điện Yadea và Vinfast:</strong><br />
-                    41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh An Giang (0976.820.941)
+                    <strong>Chi Nhánh 1:</strong><br />
+                    102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh Kiên Giang (0866.97.98.41)<br />
+                    <strong>Chi Nhánh 2:</strong><br />
+                    41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang (0976.820.941)
                   </span>
                 </td>
                 <td style="width: 44%; vertical-align: top; text-align: center;">
@@ -347,11 +347,11 @@ const executePrintContract = (customer: Customer) => {
 
           <!-- THÔNG TIN BÊN A & BÊN B -->
           <div class="info-section">
-            <div class="info-row"><strong>I. Bên A ( Bên bán xe): CÔNG TY TNHH TPMOTOR TÙNG PHƯỢNG EV</strong></div>
+            <div class="info-row"><strong>I. Bên A ( Bên bán xe): CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG</strong></div>
             <div class="info-row" style="font-size: 9.5pt; margin-left: 12px;">
               <strong>Địa Chỉ:</strong><br />
-              Xe Điện Tổng Hợp: 102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh An Giang (0866.97.98.41)<br />
-              Xe Điện Yadea và Vinfast: 41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh An Giang (0976.820.941)
+              CN1: 102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh Kiên Giang (0866.97.98.41)<br />
+              CN2: 41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang (0976.820.941)
             </div>
 
             <div class="info-row" style="margin-top: 10px;"><strong>II. Bên B ( Bên mua xe):</strong></div>
@@ -431,20 +431,20 @@ const executePrintContract = (customer: Customer) => {
           <tbody>
             <tr>
               <td style="width: 50%; padding: 8px 10px;">
-                <div class="bold">VINFAST</div>
-                <div>1. Xe (Động Cơ, IC, bảo hành 6 năm)</div>
-                <div>2. PIN bảo hành 8 năm</div>
-                <div>3. Linh kiện điện bảo hành 1 năm</div>
-                <div>4. Các Chi Tiết Hao Mòn, Gãy, Bể, Hư Hỏng không do lỗi nhà sản xuất không thuộc trường hợp bảo hành.</div>
+                <div class="bold">HONDA, YAMAHA, SUZUKI, SYM...</div>
+                <div>1. Xe (Động cơ, khung sườn bảo hành theo sổ bảo hành chính hãng)</div>
+                <div>2. Ắc quy khởi động bảo hành 12 tháng</div>
+                <div>3. Bảo dưỡng định kỳ miễn phí tiền công theo quy định</div>
+                <div>4. Các chi tiết hao mòn tự nhiên (lốp, nhông xích, bóng đèn, má phanh...) không thuộc trường hợp bảo hành.</div>
               </td>
               <td style="width: 50%;"></td>
             </tr>
             <tr>
               <td style="width: 50%; padding: 8px 10px;">
                 <div class="bold">IV. Thoả thuận và thống nhất giữa hai bên như sau:</div>
-                <div>* Giá bán xe chưa bao gồm phí trước bạ, phí bấm biển số và phí dịch vụ (đối với xe máy điện).</div>
+                <div>* Giá bán xe chưa bao gồm lệ phí trước bạ, phí bấm biển số và phí dịch vụ (đối với xe máy).</div>
                 <div style="margin-top: 2px;">* Dịch vụ bấm biển số (không bao bảo hiểm và phí kẹp biển số):</div>
-                <div style="margin-top: 2px;">* Quà tặng: NÓN BẢO HIỂM</div>
+                <div style="margin-top: 2px;">* Quà tặng: NÓN BẢO HIỂM CHÍNH HÃNG, ÁO MƯA</div>
               </td>
               <td style="width: 50%; padding: 8px 10px;">
                 <div class="bold">V. Điều khoản chung:</div>
@@ -458,11 +458,11 @@ const executePrintContract = (customer: Customer) => {
 
         <!-- LƯU Ý -->
         <div style="line-height: 1.25; margin-top: 6px;">
-          <div><strong style="text-decoration: underline;">*LƯU Ý :</strong> &nbsp;* Phụ kiện theo xe: Bộ sạc.</div>
+          <div><strong style="text-decoration: underline;">*LƯU Ý :</strong> &nbsp;* Phụ kiện theo xe: Sổ bảo hành, 02 chìa khóa.</div>
           <ul class="note-list" style="list-style-type: '✓ '; padding-left: 16px;">
-            <li><strong style="text-decoration: underline;">Luôn Đội Nón bảo hiểm khi tham gia giao thông (Kể cả xe đạp điện).</strong></li>
+            <li><strong style="text-decoration: underline;">Luôn Đội Nón bảo hiểm khi tham gia giao thông.</strong></li>
             <li>Những phần hao mòn trong quá trình sử dụng không bảo hành.</li>
-            <li>Không bảo hành đối với xe đã đã thay đổi kết cấu về Điện.</li>
+            <li>Không bảo hành đối với xe đã thay đổi kết cấu, độ máy hoặc sử dụng sai quy cách.</li>
             <li>
               Bảo hành phải cho tháo xe, đồng thời xe phải được đem đến cửa hàng. (NẾU TRƯỜNG HỢP BẢO HÀNH TẬN NƠI – SẼ TÍNH PHÍ ĐI LẠI TÙY ĐIỀU KIỆN KHOẢNG CÁCH TỪ 100,000 ĐẾN 200,000 / 1 LẦN ĐI LẠI)<br />
               <span style="text-decoration: underline;">Điều kiện: Miễn Phí Cứu Hộ Trong tháng thứ 1 (Nếu có lỗi kỹ thuật từ nhà sản xuất)</span><br />
@@ -943,7 +943,7 @@ export default function App() {
           'Tên Xe / Hãng': extractVehicleInfo(item),
           'Màu Sắc': item.color || item.mau || '---',
           'Số Khung': item.frameNumber || item.so_khung || '---',
-          'Số Acquy': item.batteryNumber || item.so_pin || '---',
+          'Số Máy / Acquy': item.batteryNumber || item.so_pin || '---',
           'Giá Bán (VNĐ)': item.price
             ? Number(item.price).toLocaleString('vi-VN')
             : item.gia_xe
@@ -1120,7 +1120,7 @@ export default function App() {
       align: 'center',
     },
     {
-      title: 'SỐ ACQUY',
+      title: 'SỐ MÁY / ACQUY',
       dataIndex: 'batteryNumber',
       key: 'batteryNumber',
       render: (_: any, record: Customer) => {
@@ -1350,7 +1350,7 @@ export default function App() {
               <ShopOutlined />
             </div>
             <Title level={3} style={{ margin: 0, color: '#1f1f1f', fontWeight: 700 }}>
-              XE ĐIỆN TÙNG PHƯỢNG
+              XE MÁY TÙNG PHƯỢNG
             </Title>
             <Text type="secondary" style={{ fontSize: 13 }}>
               Hệ thống Quản lý Bán xe & In Hợp đồng
@@ -1527,7 +1527,7 @@ export default function App() {
         >
           <div>
             <Title level={3} style={{ margin: 0, fontSize: window.innerWidth < 768 ? '18px' : '22px', color: '#1f1f1f' }}>
-              XE ĐIỆN TÙNG PHƯỢNG - HỆ THỐNG QUẢN LÝ BÁN XE & IN HỢP ĐỒNG
+              XE MÁY TÙNG PHƯỢNG - HỆ THỐNG QUẢN LÝ BÁN XE & IN HỢP ĐỒNG
             </Title>
             <Space wrap style={{ marginTop: 4 }}>
               <Text type="secondary" style={{ fontSize: '13px' }}>
@@ -1769,8 +1769,8 @@ export default function App() {
             <Form.Item name="frameNumber" label="Số Khung">
               <Input placeholder="Nhập số khung..." />
             </Form.Item>
-            <Form.Item name="batteryNumber" label="Số Acquy">
-              <Input placeholder="Nhập số acquy..." />
+            <Form.Item name="batteryNumber" label="Số Máy / Acquy">
+              <Input placeholder="Nhập số máy hoặc số acquy..." />
             </Form.Item>
           </div>
 

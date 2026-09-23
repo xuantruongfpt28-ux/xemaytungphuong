@@ -150,7 +150,7 @@ export const CustomerDetailModal: React.FC<CustomerDetailModalProps> = ({
             </div>
           </div>
 
-          {/* Hàng 6: Số khung & Số Acquy */}
+          {/* Hàng 6: Số khung & Số Máy / Acquy */}
           <div className="grid grid-cols-2 gap-4">
             <div>
               <span className="text-gray-500">Số Khung (VIN):</span>
@@ -161,7 +161,7 @@ export const CustomerDetailModal: React.FC<CustomerDetailModalProps> = ({
               </p>
             </div>
             <div>
-              <span className="text-gray-500">Số Acquy / Pin:</span>
+              <span className="text-gray-500">Số Máy / Acquy:</span>
               <p className="mt-1">
                 <span className="bg-green-50 text-green-600 px-2 py-1 rounded text-xs font-mono font-medium border border-green-200">
                   {customer.batteryNumber || '---'}

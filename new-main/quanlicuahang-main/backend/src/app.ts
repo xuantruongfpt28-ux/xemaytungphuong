@@ -1,6 +1,7 @@
 import express, { Request, Response } from 'express';
 import cors from 'cors';
 import { PrismaClient } from '@prisma/client';
+import branchRoutes from './routes/branchRoutes';
 
 const prisma = new PrismaClient();
 const app = express();
@@ -17,6 +18,14 @@ app.use(
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// 2. Health check route
+app.get('/', (_req: Request, res: Response) => {
+  res.json({ message: 'Xe May Tung Phuong Backend is running!' });
+});
+
+// Mount branch routes
+app.use('/api/branches', branchRoutes);
+
 // Hàm tiện ích làm sạch tên xe, tránh dính ISO timestamp
 const cleanVehicleName = (vehicleName?: string, brand?: string, model?: string) => {
   let name = vehicleName || [brand, model].filter(Boolean).join(' ');
@@ -25,11 +34,6 @@ const cleanVehicleName = (vehicleName?: string, brand?: string, model?: string) 
   }
   return name || null;
 };
-
-// 2. Health check route
-app.get('/', (_req: Request, res: Response) => {
-  res.json({ message: 'Xe Dien Thanh Tuoi Backend is running!' });
-});
 
 // 3. Lấy danh sách khách hàng
 app.get('/api/customers', async (_req: Request, res: Response) => {

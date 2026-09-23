@@ -127,9 +127,9 @@ export const printContractDirectly = (customer: Customer) => {
           <tbody>
             <tr>
               <td style="width: 50%; vertical-align: top; text-align: center;">
-                <strong style="font-size: 11.5px;">CÔNG TY TNHH XE ĐIỆN THANH TƯƠI</strong><br />
-                <span style="font-size: 10px;">Tỉnh lộ 942, xã Chợ Mới, tỉnh An Giang</span><br />
-                <span style="font-size: 10px;">ĐT: 0939.30.90.91</span>
+                <strong style="font-size: 11.5px;">CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG</strong><br />
+                <span style="font-size: 10px;">Hệ thống mua bán xe máy - Phụ tùng chính hãng</span><br />
+                <span style="font-size: 10px;">ĐT: 0976.820.941 - 0866.97.98.41</span>
               </td>
               <td style="width: 50%; vertical-align: top; text-align: center;">
                 <strong style="font-size: 11.5px;">CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong><br />
@@ -145,13 +145,11 @@ export const printContractDirectly = (customer: Customer) => {
           <div class="bold" style="font-size: 11.5px;">(KIÊM HỢP ĐỒNG BÁN XE)</div>
         </div>
 
-        <div><strong>Bên A ( Bên bán xe): Công ty TNHH XE ĐIỆN THANH TƯƠI CHỢ MỚI:</strong></div>
-        <div>Tài khoản: Công ty TNHH Xe điện Thanh Tươi Chợ Mới - MBBANK- 1867676868</div>
-        <div>Điện thoại liên hệ : 0939.30.90.91</div>
-        <div>CN1: Bình Hiệp A, xã Lấp Vò, tỉnh Đồng Tháp</div>
-        <div>CN2: Tỉnh lộ 942, xã Chợ Mới, tỉnh An Giang</div>
-        <div>CN3: Châu Văn Liêm, ấp Thị 2, xã Long Điền, tỉnh An Giang</div>
-        <div>CN4: 293 Châu Văn Liêm, xã Long Điền, tỉnh An Giang</div>
+        <div><strong>Bên A ( Bên bán xe): CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG:</strong></div>
+        <div>Tài khoản: CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG</div>
+        <div>Điện thoại liên hệ: 0976.820.941 - 0866.97.98.41</div>
+        <div>CN1: 102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh Kiên Giang</div>
+        <div>CN2: 41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang</div>
 
         <div style="margin-top: 3px;"><strong>Bên B ( Bên mua xe):</strong></div>
         <div>
@@ -215,21 +213,21 @@ export const printContractDirectly = (customer: Customer) => {
             </tr>
             <tr>
               <td>
-                <div class="bold">BMX, PEGA, DK, SONSU…JP, UNI</div>
+                <div class="bold">HONDA, YAMAHA, SUZUKI, SYM...</div>
                 
-                <div style="margin: 2px 0;">Bình bảo hành 12 tháng, phù 06 tháng ( nên xem hướng dẫn sử dụng ắc quy).</div><br />
+                <div style="margin: 2px 0;">Động cơ, khung sườn bảo hành chính hãng theo sổ bảo hành.</div><br />
                 
-                <div style="margin: 2px 0;">Động cơ, IC, bộ sạc bảo hành 12 tháng.</div><br />
+                <div style="margin: 2px 0;">Ắc quy khởi động bảo hành 12 tháng.</div><br />
                 
-                <div style="margin: 2px 0;">Bình bảo hành 12 tháng, phù 09 tháng ( nên xem hướng dẫn sử dụng ắc quy).</div>
+                <div style="margin: 2px 0;">Bảo dưỡng định kỳ miễn phí tiền công theo quy định.</div>
               
                 </td>
               <td>
                 <div class="bold">IV: Thoả thuận và thống nhất giữa hai bên như sau</div>
-                <div>* Giá bán xe chưa bao gồm phí trước bạ, phí bấm biển số và phí dịch vụ ( đối với xe máy điện)</div>
+                <div>* Giá bán xe chưa bao gồm lệ phí trước bạ, phí bấm biển số và phí dịch vụ (đối với xe máy)</div>
                 <div>* Dịch vụ bấm biển số (không bao bảo hiểm và phí kẹp biển số):</div>
-                <div class="bold">* Quà tặng: NÓN BẢO HIỂM</div>
-                <div class="bold italic" style="margin-top: 2px;">*ƯU ĐÃI ĐẶC BIỆT: Miễn công cứu hộ tận nhà 12 tháng khi xe KÉO GA KHÔNG CHẠY (15km)</div>
+                <div class="bold">* Quà tặng: NÓN BẢO HIỂM CHÍNH HÃNG, ÁO MƯA</div>
+                <div class="bold italic" style="margin-top: 2px;">*ƯU ĐÃI ĐẶC BIỆT: Miễn phí tiền công bảo dưỡng định kỳ và kiểm tra xe tại cửa hàng</div>
               </td>
               <td>
                 <div class="bold">V: Điều khoản chung</div>
@@ -245,9 +243,9 @@ export const printContractDirectly = (customer: Customer) => {
           <div class="bold">*LƯU Ý :</div>
           <table style="font-size: 9.5px; line-height: 1.15;">
             <tbody>
-              <tr><td style="width: 14px; vertical-align: top;">✓</td><td class="bold italic">LUÔN ĐỘI NÓN BẢO HIỂM KHI THAM GIA GIAO THÔNG (Kể cả xe đạp điện).</td></tr>
-              <tr><td style="vertical-align: top;">✓</td><td class="bold">NHỮNG PHẦN HAO MÒN TRONG QUÁ TRÌNH SỬ DỤNG KHÔNG BẢO HÀNH .</td></tr>
-              <tr><td style="vertical-align: top;">✓</td><td class="bold">KHÔNG BẢO HÀNH ĐỐI VỚI XE ĐÃ THAY ĐỔI KẾT CẤU VỀ ĐIỆN.</td></tr>
+              <tr><td style="width: 14px; vertical-align: top;">✓</td><td class="bold italic">LUÔN ĐỘI NÓN BẢO HIỂM KHI THAM GIA GIAO THÔNG.</td></tr>
+              <tr><td style="vertical-align: top;">✓</td><td class="bold">NHỮNG PHẦN HAO MÒN TRONG QUÁ TRÌNH SỬ DỤNG (LỐP, MÁ PHANH, BÓNG ĐÈN...) KHÔNG BẢO HÀNH.</td></tr>
+              <tr><td style="vertical-align: top;">✓</td><td class="bold">KHÔNG BẢO HÀNH ĐỐI VỚI XE ĐÃ THAY ĐỔI KẾT CẤU, ĐỘ MÁY HOẶC SỬ DỤNG SAI QUY CÁCH.</td></tr>
               <tr><td style="vertical-align: top;">✓</td><td class="bold">BẢO HÀNH SỬA CHỮA KHÔNG BẢO HÀNH ĐỔI MỚI.</td></tr>
               <tr><td style="vertical-align: top;">✓</td><td class="bold">BẢO HÀNH PHẢI CHO THÁO XE, ĐỒNG THỜI XE PHẢI ĐƯỢC ĐEM ĐẾN CỬA HÀNG.</td></tr>
               <tr><td style="vertical-align: top;">✓</td><td class="bold">MỌI VẤN ĐỀ PHÁT SINH VỚI XE TRONG QUÁ TRÌNH SỬ DỤNG PHẢI ĐEM ĐẾN CỬA HÀNG TRONG THỜI GIAN NHANH NHẤT (1-3 NGÀY) ĐỂ ĐƯỢC GIẢI QUYẾT. NẾU SAU THỜI GIAN TRÊN CỬA HÀNG HOÀN TOÀN KHÔNG CHỊU TRÁCH NHIỆM.</td></tr>

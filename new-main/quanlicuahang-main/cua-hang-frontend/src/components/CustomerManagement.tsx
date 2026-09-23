@@ -37,7 +37,7 @@ dayjs.extend(customParseFormat);
 const { Title, Text } = Typography;
 const { RangePicker } = DatePicker;
 
-const BASE_API_URL = import.meta.env.VITE_API_URL || 'https://xedienthanhtuoi.vercel.app/api';
+const BASE_API_URL = import.meta.env.VITE_API_URL || 'https://xemaytungphuong-backend.vercel.app/api';
 
 export default function CustomerManagement() {
   const [customers, setCustomers] = useState<Customer[]>([]);
@@ -204,7 +204,7 @@ export default function CustomerManagement() {
       'Tên Xe / Hãng': item.vehicleName || [item.brand, item.model].filter(Boolean).join(' ') || item.model || '---',
       'Màu Sắc': item.color || item.mau || '---',
       'Số Khung': item.frameNumber || item.so_khung || '---',
-      'Số Acquy': item.batteryNumber || item.so_pin || '---',
+      'Số Máy / Acquy': item.batteryNumber || item.so_pin || '---',
       'Giá Bán (VNĐ)': item.price ? Number(item.price).toLocaleString('vi-VN') : '0',
       'Nhân Viên': item.staffName || '---',
       'Chi Nhánh': item.branchName || '---',
@@ -341,7 +341,7 @@ export default function CustomerManagement() {
       },
     },
     {
-      title: 'SỐ ACQUY',
+      title: 'SỐ MÁY / ACQUY',
       dataIndex: 'batteryNumber',
       key: 'batteryNumber',
       render: (_: any, record: Customer) => {
@@ -496,8 +496,8 @@ export default function CustomerManagement() {
           <Form.Item name="frameNumber" label="Số Khung">
             <Input placeholder="Nhập số khung..." />
           </Form.Item>
-          <Form.Item name="batteryNumber" label="Số Acquy">
-            <Input placeholder="Nhập số acquy..." />
+          <Form.Item name="batteryNumber" label="Số Máy / Acquy">
+            <Input placeholder="Nhập số máy hoặc số acquy..." />
           </Form.Item>
           <Form.Item name="price" label="Giá bán (VNĐ)">
             <InputNumber
