@@ -318,7 +318,13 @@ const htmlContent = `
         .info-row { 
           margin-bottom: 4px; 
         }
-
+        .note-box {
+          word-break: break-word;
+          overflow-wrap: break-word;
+          white-space: pre-wrap;
+          line-height: 1.3;
+          margin-bottom: 3px;
+        }
         .dots {
           border-bottom: 1px dotted #000;
           display: inline-block;
@@ -455,7 +461,7 @@ const htmlContent = `
       </div>
 
         <!-- CHỮ KÝ -->
-        <table style="margin-top: 25px; text-align: center; font-size: 11pt;">
+        <table style="margin-top: 8px; text-align: center; font-size: 11pt;">
           <tbody>
             <tr>
               <td style="width: 50%; padding-bottom: 50px;">
