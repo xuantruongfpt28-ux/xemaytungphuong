@@ -239,14 +239,18 @@ const executePrintContract = (customer: Customer) => {
   const mauXe = customer.color || customer.mau || '';
   const soKhung = customer.frameNumber || customer.so_khung || '';
   const customerNote = customer.note ? customer.note.trim() : '';
+  const khachNoVal = customer?.debtAmount || customer?.khachNo || 0;
+const khachNoStr = khachNoVal ? `${Number(khachNoVal).toLocaleString('vi-VN')} VNĐ` : '..........................';
 
+const datCocVal = customer?.prepaidAmount || customer?.datCoc || 0;
+const datCocStr = datCocVal ? `${Number(datCocVal).toLocaleString('vi-VN')} VNĐ` : '....................................................................................................';
   const printWindow = window.open('', '_blank');
   if (!printWindow) {
     alert('Vui lòng cho phép mở popup trên trình duyệt để in hợp đồng!');
     return;
   }
 
-  const htmlContent = `
+const htmlContent = `
     <!DOCTYPE html>
     <html lang="vi">
     <head>
@@ -262,8 +266,8 @@ const executePrintContract = (customer: Customer) => {
         html, body { 
           margin: 0; 
           padding: 0; 
-          font-size: 11px; /* Giảm cỡ chữ chung xuống 12px */
-          line-height: 1.15;
+          font-size: 11pt; 
+          line-height: 1.3;
           background: #fff; 
           font-family: "Times New Roman", Times, serif; 
           color: #000; 
@@ -272,28 +276,16 @@ const executePrintContract = (customer: Customer) => {
         .page {
           width: 210mm;
           height: 297mm;
-          padding: 8mm 12mm 8mm 12mm;
+          padding: 12mm 15mm 10mm 15mm;
           position: relative;
           overflow: hidden;
           box-sizing: border-box;
           display: flex;
           flex-direction: column;
-        }
-
-        .page-break {
-          page-break-before: always;
+          justify-content: space-between;
         }
 
         table { width: 100%; border-collapse: collapse; }
-        
-        table.grid-table { border: 1px solid #000; margin-top: 10px; }
-        table.grid-table td, table.grid-table th { 
-          border: 1px solid #000; 
-          padding: 8px 10px; 
-          vertical-align: top; 
-          font-size: 11pt;
-          line-height: 1.35;
-        }
 
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
@@ -302,53 +294,69 @@ const executePrintContract = (customer: Customer) => {
         
         .info-section {
           font-size: 11pt;
-          line-height: 1.45;
+          line-height: 1.38;
         }
 
         .info-row { 
-          margin-bottom: 3px; 
+          margin-bottom: 4px; 
         }
 
-        ul.note-list { margin: 4px 0; padding-left: 16px; font-size: 10pt; line-height: 1.25; }
-        ul.note-list li { margin-bottom: 3px; }
+        .dots {
+          border-bottom: 1px dotted #000;
+          display: inline-block;
+        }
+
+        ul.clause-list { 
+          margin: 4px 0 8px 0; 
+          padding-left: 20px; 
+          list-style-type: disc;
+        }
+        ul.clause-list li { 
+          margin-bottom: 3px; 
+          font-size: 10.5pt;
+        }
       </style>
     </head>
     <body>
-      <!-- TRANG 1 -->
-      <div class="page" style="justify-content: space-between;">
+      <div class="page">
         <div>
           <!-- HEADER CÔNG TY & QUỐC HIỆU -->
-          <table style="margin-bottom: 12px;">
+          <table style="margin-bottom: 8px;">
             <tbody>
               <tr>
-                <td style="width: 56%; vertical-align: top;">
-                  <strong style="font-size: 11.5pt;">CÔNG TY TNHH TPMOTOR TÙNG PHƯỢNG EV</strong><br />
-                  <span style="font-size: 9.5pt; line-height: 1.25;">
+                <td style="width: 58%; vertical-align: top;">
+                  <strong style="font-size: 11pt;">CÔNG TY TNHH TPMOTOR TÙNG PHƯỢNG EV</strong><br />
+                  <span style="font-size: 8.5pt; line-height: 1.25;">
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>CN Xe Máy Tổng Hợp:</strong><br />
                     99D Ấp Nội Ô, Xã Giồng Riềng, Tỉnh An Giang (02973654444)<br /> 
-                    <strong>CN1:Xe điện Tổng Hợp</strong><br />
-                    102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh Kiên Giang (0866.97.98.41)<br />
-                    <strong>CN2 Xe Điện Yadea và Vinfast:</strong><br />
-                    41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang (0976.820.941)
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>CN1 Xe điện Tổng Hợp:</strong><br />
+                    102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh An Giang (0866.67.98.41)<br />
+                    &nbsp;&nbsp;&nbsp;&nbsp;<strong>CN2 Xe Điện Yadea và Vinfast:</strong><br />
+                    41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh An Giang (0976.820.941)
                   </span>
                 </td>
-                <td style="width: 44%; vertical-align: top; text-align: center;">
+                <td style="width: 42%; vertical-align: top; text-align: center;">
                   <strong style="font-size: 10pt;">CỘNG HOÀ XÃ HỘI CHỦ NGHĨA VIỆT NAM</strong><br />
-                  <strong style="font-size: 9pt;">Độc lập - Tự do - Hạnh phúc</strong><br />
-                  <i style="font-size: 9.5pt;">An Giang, Ngày ${day} Tháng ${month} Năm 20${year.slice(-2)}</i>
+                  <strong style="font-size: 9.5pt;">Độc lập - Tự do - Hạnh phúc</strong><br />
+                  <div style="margin-top: 15px;">
+                    <i style="font-size: 9.5pt;">An Giang, Ngày ${day || '.....'} Tháng ${month || '.....'} Năm 20${year ? year.slice(-2) : '.....'}</i>
+                  </div>
                 </td>
               </tr>
             </tbody>
           </table>
 
           <!-- TIÊU ĐỀ -->
-          <div class="text-center" style="margin: 12px 0 14px 0;">
-            <div class="bold" style="font-size: 16pt; letter-spacing: 0.5px;">BIÊN NHẬN</div>
-            <div class="bold" style="font-size: 12pt;">(KIÊM HỢP ĐỒNG BÁN XE)</div>
+          <div class="text-center" style="margin: 10px 0 12px 0;">
+            <div class="bold" style="font-size: 15pt; letter-spacing: 0.5px;">BIÊN NHẬN</div>
+            <div class="bold" style="font-size: 11.5pt;">(KIÊM HỢP ĐỒNG BÁN XE)</div>
           </div>
 
           <!-- THÔNG TIN BÊN A & BÊN B -->
           <div class="info-section">
-            <div class="info-row"><strong>I. Bên A ( Bên bán xe): CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG</strong></div>
+            <div class="info-row">
+              <strong>Bên A ( Bên bán xe): &nbsp;CÔNG TY TNHH TPMOTOR TÙNG PHƯỢNG EV</strong>
+            </div>
             <div class="info-row" style="font-size: 9.5pt; margin-left: 12px;">
               <strong>Địa Chỉ:</strong><br />
               Xe Máy Tổng Hợp: 99D Ấp Nội Ô, Xã Giồng Riềng, Tỉnh An Giang (02973654444)<br />
@@ -356,34 +364,56 @@ const executePrintContract = (customer: Customer) => {
               Xe Điện Yadea và Vinfast: 41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang (0976.820.941)
             </div>
 
-            <div class="info-row" style="margin-top: 10px;"><strong>II. Bên B ( Bên mua xe):</strong></div>
-            <div class="info-row">Họ và tên: <strong>${hoTen || '...................................................'}</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Điện thoại: <strong>${dienThoai || '.........................'}</strong></div>
-            <div class="info-row">Địa chỉ: <strong>${diaChi || '........................................................................................................................'}</strong></div>
-            <div class="info-row">CCCD số: <strong>${idCardNumber || '............................................'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Ngày cấp: <strong>${idCardIssueDate || '.........................'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Nơi cấp: Cục Cảnh Sát.</div>
-            <div class="info-row">Email: <strong>${email || '........................................................................................................................'}</strong></div>
-            <div class="info-row">
-              Tên Xe: <strong>${modelXe}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Màu: <strong>${mauXe}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Số VIN: <strong>${soKhung}</strong>
+            <div class="info-row" style="margin-top: 6px;">
+              <strong>II. Bên B ( Bên mua xe):</strong>
             </div>
             <div class="info-row">
-              Ngân Hàng Vay: <strong>${installmentBank || '............................'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Khoản Vay: <strong>${debtAmountStr || '............................'}</strong>
-            ${customerNote ? `
-            <p class="note-line">Ghi chú: ${customerNote}</p>`:''}
+              Họ và tên: <strong>${hoTen || '…………………………………………………….'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Điện thoại: <strong>${dienThoai || '……………………………………………….'}</strong>
+            </div>
+            <div class="info-row">
+              Địa chỉ: <strong>${diaChi || '……………………………………………………………………………………………………………………………………………'}</strong>
+            </div>
+            <div class="info-row">
+              CCCD số: <strong>${idCardNumber || '…………………..………………………………'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Ngày cấp: <strong>${idCardIssueDate || '…………………..………..'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Nơi cấp: Cục Cảnh Sát.
+            </div>
+            <div class="info-row">
+              Email: <strong>${email || '……………………………………………………………………………………………………………………………………………….'}</strong>
+            </div>
+            <div class="info-row">
+              Tên Xe: <strong>${modelXe || '…………………………………..'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Màu: <strong>${mauXe || '……………………………'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Số VIN: <strong>${soKhung || '…………………………………………..'}</strong>
+            </div>
+            <div class="info-row">
+              Ngân Hàng Vay: <strong>${installmentBank || '………………………..'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Số Tiền Vay: <strong>${debtAmountStr || '……………………………'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Khách Nợ: <strong>${khachNoStr || '………………………………..'}</strong>
             </div>
             <div class="info-row italic">
-              (Viết bằng chữ: ....................................................................)
+              ……………………………………………………………………… (Viết bằng chữ).
+            </div>
+            ${customerNote ? `
+            <div class="info-row">
+              Ghi Chú: <strong>${customerNote}</strong>
+            </div>` : `
+            <div class="info-row">
+              Ghi Chú: ………………………………………………………………………………………………………………………….
             </div>
             <div class="info-row">
-              Số tiền khách đặt cọc: ....................................................................................................
+              ……………………………………………………………………………………………………………………………………..
+            </div>
+            `}
+            <div class="info-row">
+              Số tiền khách đặt cọc: <strong>${datCocStr || '………………………………………………………………………………………………………………………………….'}</strong>
             </div>
             <div class="info-row">
-              Thu xe cũ ( tên xe ): ......................... Màu: ......................... Số VIN: .........................
+              Thu xe cũ ( tên xe ): ………………………………. Màu: ………………………….. Số VIN: …………………………………..
             </div>
 
-            <div style="margin: 10px 0 6px 0;">Sau khi bàn bạc và đi đến thống nhất, bên A đồng ý bán xe và bên B đồng ý mua xe với các điều khoản sau:</div>
-          </div>
+            <div style="margin: 8px 0 6px 0;">
+              Sau khi bàn bạc và đi đến thống nhất, bên A đồng ý bán xe và bên B đồng ý mua xe với các điều khoản sau:
+            </div>
 
             <!-- IV: THỎA THUẬN VÀ THỐNG NHẤT -->
-            <div class="bold" style="margin-top: 6px;">IV: Thoả thuận và thống nhất giữa hai bên như sau</div>
+            <div class="bold" style="margin-top: 8px;">
+              &nbsp;&nbsp;&nbsp;IV: &nbsp;Thoả thuận và thống nhất giữa hai bên như sau
+            </div>
             <ul class="clause-list">
               <li>Giá bán xe máy đã bao gồm phí trước bạ không bao gồm phí bấm biển số và phí dịch vụ</li>
               <li>Bên B có thể yêu cầu tự hoàn thành hồ sơ biển số, bên A sẽ trừ phí trước bạ nếu Bên B có yêu cầu.</li>
@@ -392,7 +422,9 @@ const executePrintContract = (customer: Customer) => {
             </ul>
 
             <!-- V: ĐIỀU KHOẢN CHUNG -->
-            <div class="bold">V: Điều khoản chung</div>
+            <div class="bold" style="margin-top: 6px;">
+              &nbsp;&nbsp;&nbsp;V: Điều khoản chung
+            </div>
             <ul class="clause-list">
               <li>Bên B đã kiểm tra xe mới 100%, không trầy xước, phụ tùng theo xe đầy đủ.</li>
               <li>Bên B đã được bên A hướng dẫn sử dụng xe, chế độ bảo hành và kỹ năng lái xe an toàn, nhận quà khuyến mãi đầy đủ, bên B đã đọc và xác nhận những nội dung trên.</li>
@@ -402,16 +434,16 @@ const executePrintContract = (customer: Customer) => {
         </div>
 
         <!-- CHỮ KÝ -->
-        <table style="margin-top: 15px; text-align: center; font-size: 10.5pt;">
+        <table style="margin-top: 25px; text-align: center; font-size: 11pt;">
           <tbody>
             <tr>
-              <td style="width: 50%; padding-bottom: 60px;">
+              <td style="width: 50%; padding-bottom: 50px;">
                 <strong>Bên bán A</strong><br />
-                <i style="font-size: 9pt; text-decoration: underline;">(Ký và ghi rõ họ tên)</i>
+                <i style="font-size: 9.5pt;">(Ký và ghi rõ họ tên)</i>
               </td>
-              <td style="width: 50%; padding-bottom: 60px;">
+              <td style="width: 50%; padding-bottom: 50px;">
                 <strong>Bên mua B</strong><br />
-                <i style="font-size: 9pt; text-decoration: underline;">(Ký và ghi rõ họ tên)</i>
+                <i style="font-size: 9.5pt;">(Ký và ghi rõ họ tên)</i>
               </td>
             </tr>
           </tbody>
