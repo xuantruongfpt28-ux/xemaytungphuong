@@ -286,7 +286,25 @@ const htmlContent = `
         }
 
         table { width: 100%; border-collapse: collapse; }
+        table.clause-table { 
+          border: 1.5px solid #000 !important; 
+          margin-top: 10px; 
+          margin-bottom: 10px;
+        }
+        table.clause-table td { 
+          border: 1.5px solid #000 !important; 
+          padding: 8px 10px; 
+          vertical-align: top; 
+          font-size: 10pt;
+          line-height: 1.35;
+        }
 
+        /* Dòng kẻ phân cách ngang */
+        .line-divider {
+          border-bottom: 1px dashed #000;
+          margin: 6px 0;
+          width: 100%;
+        }        
         .bold { font-weight: bold; }
         .italic { font-style: italic; }
         .text-center { text-align: center; }
