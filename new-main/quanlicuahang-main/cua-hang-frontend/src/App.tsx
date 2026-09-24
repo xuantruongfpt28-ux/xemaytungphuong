@@ -322,11 +322,12 @@ const executePrintContract = (customer: Customer) => {
             <tbody>
               <tr>
                 <td style="width: 56%; vertical-align: top;">
-                  <strong style="font-size: 11.5pt;">CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG</strong><br />
+                  <strong style="font-size: 11.5pt;">CÔNG TY TNHH TPMOTOR TÙNG PHƯỢNG EV</strong><br />
                   <span style="font-size: 9.5pt; line-height: 1.25;">
-                    <strong>Chi Nhánh 1:</strong><br />
+                    99D Ấp Nội Ô, Xã Giồng Riềng, Tỉnh An Giang (02973654444)<br /> 
+                    <strong>CN1:Xe điện Tổng Hợp</strong><br />
                     102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh Kiên Giang (0866.97.98.41)<br />
-                    <strong>Chi Nhánh 2:</strong><br />
+                    <strong>CN2 Xe Điện Yadea và Vinfast:</strong><br />
                     41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang (0976.820.941)
                   </span>
                 </td>
@@ -350,8 +351,9 @@ const executePrintContract = (customer: Customer) => {
             <div class="info-row"><strong>I. Bên A ( Bên bán xe): CÔNG TY TNHH XE MÁY TÙNG PHƯỢNG</strong></div>
             <div class="info-row" style="font-size: 9.5pt; margin-left: 12px;">
               <strong>Địa Chỉ:</strong><br />
-              CN1: 102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh Kiên Giang (0866.97.98.41)<br />
-              CN2: 41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang (0976.820.941)
+              Xe Máy Tổng Hợp: 99D Ấp Nội Ô, Xã Giồng Riềng, Tỉnh An Giang (02973654444)<br />
+              Xe Điện Tổng Hợp: 102 Ấp Nội Ô, Xã Giồng Riềng, Tỉnh Kiên Giang (0866.97.98.41)<br />
+              Xe Điện Yadea và Vinfast: 41 Hùng Vương, Ấp 6, Xã Giồng Riềng, Tỉnh Kiên Giang (0976.820.941)
             </div>
 
             <div class="info-row" style="margin-top: 10px;"><strong>II. Bên B ( Bên mua xe):</strong></div>
@@ -380,111 +382,23 @@ const executePrintContract = (customer: Customer) => {
             <div style="margin: 10px 0 6px 0;">Sau khi bàn bạc và đi đến thống nhất, bên A đồng ý bán xe và bên B đồng ý mua xe với các điều khoản sau:</div>
           </div>
 
-          <!-- BẢNG ĐIỀU KHOẢN -->
-          <table class="grid-table">
-            <thead>
-              <tr>
-                <th style="width: 50%; padding: 8px;" class="text-center">I. ĐIỀU KHOẢN VỀ BẢO HÀNH</th>
-                <th style="width: 50%; padding: 8px;" class="text-center">II. HƯỚNG DẪN SỬ DỤNG ẮC QUY</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="padding: 10px 12px; height: 100%;">
-                  <div class="bold">YADEA</div>
-                  <div style="margin-top: 3px;">1. Động cơ, IC, bộ sạc bảo hành 24 tháng. Bình bảo hành 24 tháng. ((Cụ thể lỗi 1 bình đổi cả bộ trong 18 tháng, lỗi bình nào đổi bình đó trong 6 tháng còn lại (Hoặc 20.000km))</div>
-                  <div style="margin-top: 5px;">2. Động cơ, IC, bộ sạc bảo hành 36 tháng. Pin bảo hành 36 tháng (Hoặc 30.000km)</div>
-                  <div style="margin-top: 5px;">3. Động cơ, IC, bộ sạc bảo hành 24 tháng. Bình bảo hành 12 tháng (Cụ thể lỗi 1 bình đổi cả bộ trong 9 tháng, lỗi bình nào đổi bình đó trong 3 tháng còn lại)</div>
-                  <div class="bold" style="margin-top: 10px;">XE HÃNG KHÁC ( JP Motor, Detech, Victoria...)</div>
-                  <div style="margin-top: 3px;">[ &nbsp; ] Bình bảo hành 12 tháng, phù 06 tháng (nên xem hướng dẫn sử dụng ắc quy).</div>
-                  <div style="margin-top: 3px;">[ &nbsp; ] Bình bảo hành 12 tháng, phù 09 tháng (nên xem hướng dẫn sử dụng ắc quy)</div>
-                  <div style="margin-top: 3px;">[ &nbsp; ] Bình bảo hành 24 tháng</div>
-                  <div style="margin-top: 8px; line-height: 1.5;">
-                    Động cơ: ........ Tháng<br />
-                    IC: .................. Tháng<br />
-                    Bộ Sạc: ............ Tháng
-                  </div>
-                </td>
-                <td style="padding: 10px 12px;">
-                  <div class="italic">
-                    <strong>Lần sạc đầu tiên:</strong> Sau khi sạc ắc quy đầy, sạc báo đèn xanh, rút sạc ra đợi khoảng 20 phút, cắm lại cho sạc tiếp khoảng 1 tiếng.
-                  </div>
-                  <div class="italic" style="margin-top: 10px; line-height: 1.45;">
-                    <strong>Trong quá trình sử dụng:</strong><br />
-                    + Sau khi đi xe khoảng 30 phút để ắc quy nguội bớt rồi mới sạc.<br />
-                    + Sạc sạc đầy mới sử dụng. Hạn chế tối đa tình trạng xe cạn ắc quy và sạc nhiều lần trong ngày.<br />
-                    + Trường hợp có việc bận không có nhu cầu sử dụng xe, thì mỗi tuần nên sạc 1 lần.
-                  </div>
-                  <div class="bold text-center" style="margin-top: 25px; font-size: 10pt; line-height: 1.35; padding: 0 5px;">
-                    ẮC QUY SẼ XUỐNG CẤP DẦN THEO THỜI GIAN NÊN HÃY SỬ DỤNG ĐÚNG CÁCH ĐỂ SỬ DỤNG ẮC QUY ĐƯỢC LÂU HƠN
-                  </div>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+            <!-- IV: THỎA THUẬN VÀ THỐNG NHẤT -->
+            <div class="bold" style="margin-top: 6px;">IV: Thoả thuận và thống nhất giữa hai bên như sau</div>
+            <ul class="clause-list">
+              <li>Giá bán xe máy đã bao gồm phí trước bạ không bao gồm phí bấm biển số và phí dịch vụ</li>
+              <li>Bên B có thể yêu cầu tự hoàn thành hồ sơ biển số, bên A sẽ trừ phí trước bạ nếu Bên B có yêu cầu.</li>
+              <li>Dịch vụ bấm biển số ( không bao phí ép biển số)</li>
+              <li>Quà tặng: 2 nón bảo hiểm, áo mưa, móc khóa, bảo hiểm xe máy 1 năm</li>
+            </ul>
 
-      <!-- TRANG 2 -->
-      <div class="page page-break">
-        <table class="grid-table" style="margin-top: 0;">
-          <tbody>
-            <tr>
-              <td style="width: 50%; padding: 8px 10px;">
-                <div class="bold">HONDA, YAMAHA, SUZUKI, SYM...</div>
-                <div>1. Xe (Động cơ, khung sườn bảo hành theo sổ bảo hành chính hãng)</div>
-                <div>2. Ắc quy khởi động bảo hành 12 tháng</div>
-                <div>3. Bảo dưỡng định kỳ miễn phí tiền công theo quy định</div>
-                <div>4. Các chi tiết hao mòn tự nhiên (lốp, nhông xích, bóng đèn, má phanh...) không thuộc trường hợp bảo hành.</div>
-              </td>
-              <td style="width: 50%;"></td>
-            </tr>
-            <tr>
-              <td style="width: 50%; padding: 8px 10px;">
-                <div class="bold">IV. Thoả thuận và thống nhất giữa hai bên như sau:</div>
-                <div>* Giá bán xe chưa bao gồm lệ phí trước bạ, phí bấm biển số và phí dịch vụ (đối với xe máy).</div>
-                <div style="margin-top: 2px;">* Dịch vụ bấm biển số (không bao bảo hiểm và phí kẹp biển số):</div>
-                <div style="margin-top: 2px;">* Quà tặng: NÓN BẢO HIỂM CHÍNH HÃNG, ÁO MƯA</div>
-              </td>
-              <td style="width: 50%; padding: 8px 10px;">
-                <div class="bold">V. Điều khoản chung:</div>
-                <div>* Bên B đã kiểm tra xe mới 100%, không trầy xước, phụ tùng theo xe đầy đủ.</div>
-                <div style="margin-top: 2px;">* Bên B đã được bên A hướng dẫn sử dụng xe, chế độ bảo hành và kỹ năng lái xe an toàn, nhận quà khuyến mãi đầy đủ... bên B đã đọc và xác nhận những nội dung trên.</div>
-                <div style="margin-top: 2px;">* Biên nhận được lập thành 02 bản có giá trị như nhau, mỗi bên giữ 1 bản.</div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- LƯU Ý -->
-        <div style="line-height: 1.25; margin-top: 6px;">
-          <div><strong style="text-decoration: underline;">*LƯU Ý :</strong> &nbsp;* Phụ kiện theo xe: Sổ bảo hành, 02 chìa khóa.</div>
-          <ul class="note-list" style="list-style-type: '✓ '; padding-left: 16px;">
-            <li><strong style="text-decoration: underline;">Luôn Đội Nón bảo hiểm khi tham gia giao thông.</strong></li>
-            <li>Những phần hao mòn trong quá trình sử dụng không bảo hành.</li>
-            <li>Không bảo hành đối với xe đã thay đổi kết cấu, độ máy hoặc sử dụng sai quy cách.</li>
-            <li>
-              Bảo hành phải cho tháo xe, đồng thời xe phải được đem đến cửa hàng. (NẾU TRƯỜNG HỢP BẢO HÀNH TẬN NƠI – SẼ TÍNH PHÍ ĐI LẠI TÙY ĐIỀU KIỆN KHOẢNG CÁCH TỪ 100,000 ĐẾN 200,000 / 1 LẦN ĐI LẠI)<br />
-              <span style="text-decoration: underline;">Điều kiện: Miễn Phí Cứu Hộ Trong tháng thứ 1 (Nếu có lỗi kỹ thuật từ nhà sản xuất)</span><br />
-              Từ 1km đến 10km : 100.000đ / 1 lần đi lại.<br />
-              Từ 10km – 15km : 150.000/ 1 lần đi lại.<br />
-              Trên 20km (Trong Phạm vi Huyện Giồng Riềng cũ) : 200.000km
-            </li>
-            <li><strong style="text-decoration: underline;">Mọi vấn đề phát sinh với xe trong quá trình sử dụng phải đem đến cửa hàng.</strong></li>
-            <li><strong style="text-decoration: underline;">ĐẶC BIỆT LƯU Ý: ẮC-QUI PHẢI ĐƯỢC SẠC THƯỜNG XUYÊN. TRÁNH TRƯỜNG HỢP MẤT NGUỒN HOẶC TUỘT ÁP, ĐẠI LÝ TỪ CHỐI BẢO HÀNH.</strong></li>
-            <li>
-              <strong>KHÁCH HÀNG ĐỔI XE:</strong><br />
-              TRONG 12 GIỜ: KHÁCH HÀNG BÙ LỖ 10%<br />
-              TRONG 3 NGÀY: KHÁCH HÀNG BÙ LỖ 20%<br />
-              TRONG 30 NGÀY: KHÁCH HÀNG BÙ LỖ 30%<br />
-              <strong style="text-decoration: underline;">( TRONG BẤT KỲ TRƯỜNG HỢP NÀO ) , ĐỐI VỚI XE XUẤT HÓA ĐƠN , ĐÃ ĐÓNG THUẾ TRƯỚC BẠ BÙ LỖ 30%.</strong>
-            </li>
-            <li><span style="text-decoration: underline;">Bên B ( Người Mua ) Đã được tư vấn xe phù hợp với độ tuổi , các xe có thể đăng ký biển số đã được khách hàng xác nhận.</span></li>
-          </ul>
-        </div>
-
-        <div class="italic" style="font-size: 10pt; margin-top: 6px;">
-          Tôi (bên B) hoàn toàn đồng ý với những thoả thuận trên.
+            <!-- V: ĐIỀU KHOẢN CHUNG -->
+            <div class="bold">V: Điều khoản chung</div>
+            <ul class="clause-list">
+              <li>Bên B đã kiểm tra xe mới 100%, không trầy xước, phụ tùng theo xe đầy đủ.</li>
+              <li>Bên B đã được bên A hướng dẫn sử dụng xe, chế độ bảo hành và kỹ năng lái xe an toàn, nhận quà khuyến mãi đầy đủ, bên B đã đọc và xác nhận những nội dung trên.</li>
+              <li>Biên nhận được lập thành 02 bản có giá trị như nhau , mỗi bên giữ 1 bản</li>
+            </ul>
+          </div>
         </div>
 
         <!-- CHỮ KÝ -->
