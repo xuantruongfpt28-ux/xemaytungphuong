@@ -374,7 +374,7 @@ const htmlContent = `
               Địa chỉ: <strong>${diaChi || '……………………………………………………………………………………………………………………………………………'}</strong>
             </div>
             <div class="info-row">
-              CCCD số: <strong>${idCardNumber || '…………………..………………………………'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Ngày cấp: <strong>${idCardIssueDate || '…………………..………..'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Nơi cấp: Cục Cảnh Sát.
+              CCCD số: <strong>${idCardNumber || '…………………..……………………'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Ngày cấp: <strong>${idCardIssueDate || '…………………..…..'}</strong> &nbsp;&nbsp;&nbsp;&nbsp; Nơi cấp: Cục Cảnh Sát.
             </div>
             <div class="info-row">
               Email: <strong>${email || '……………………………………………………………………………………………………………………………………………….'}</strong>
@@ -409,29 +409,32 @@ const htmlContent = `
             <div style="margin: 8px 0 6px 0;">
               Sau khi bàn bạc và đi đến thống nhất, bên A đồng ý bán xe và bên B đồng ý mua xe với các điều khoản sau:
             </div>
-
-            <!-- IV: THỎA THUẬN VÀ THỐNG NHẤT -->
-            <div class="bold" style="margin-top: 8px;">
-              &nbsp;&nbsp;&nbsp;IV: &nbsp;Thoả thuận và thống nhất giữa hai bên như sau
-            </div>
-            <ul class="clause-list">
-              <li>Giá bán xe máy đã bao gồm phí trước bạ không bao gồm phí bấm biển số và phí dịch vụ</li>
-              <li>Bên B có thể yêu cầu tự hoàn thành hồ sơ biển số, bên A sẽ trừ phí trước bạ nếu Bên B có yêu cầu.</li>
-              <li>Dịch vụ bấm biển số ( không bao phí ép biển số)</li>
-              <li>Quà tặng: 2 nón bảo hiểm, áo mưa, móc khóa, bảo hiểm xe máy 1 năm</li>
-            </ul>
-
-            <!-- V: ĐIỀU KHOẢN CHUNG -->
-            <div class="bold" style="margin-top: 6px;">
-              &nbsp;&nbsp;&nbsp;V: Điều khoản chung
-            </div>
-            <ul class="clause-list">
-              <li>Bên B đã kiểm tra xe mới 100%, không trầy xước, phụ tùng theo xe đầy đủ.</li>
-              <li>Bên B đã được bên A hướng dẫn sử dụng xe, chế độ bảo hành và kỹ năng lái xe an toàn, nhận quà khuyến mãi đầy đủ, bên B đã đọc và xác nhận những nội dung trên.</li>
-              <li>Biên nhận được lập thành 02 bản có giá trị như nhau , mỗi bên giữ 1 bản</li>
-            </ul>
-          </div>
+          <!-- BẢNG ĐIỀU KHOẢN IV & V (CHIA 2 CỘT Y HỆT WORD) -->
+          <table class="clause-table">
+            <tbody>
+              <tr>
+                <td style="width: 50%;">
+                  <div class="bold">IV: Thoả thuận và thống nhất giữa hai bên như sau</div>
+                  <ul class="clause-list">
+                    <li>Giá bán xe máy đã bao gồm phí trước bạ không bao gồm phí bấm biển số và phí dịch vụ</li>
+                    <li>Bên B có thể yêu cầu tự hoàn thành hồ sơ biển số, bên A sẽ trừ phí trước bạ nếu Bên B có yêu cầu.</li>
+                    <li>Dịch vụ bấm biển số ( không bao phí ép biển số)</li>
+                    <li><strong style="text-decoration: underline;">Quà tặng: 2 nón bảo hiểm, áo mưa, móc khóa, bảo hiểm xe máy 1 năm</strong></li>
+                  </ul>
+                </td>
+                <td style="width: 50%;">
+                  <div class="bold">V: Điều khoản chung</div>
+                  <ul class="clause-list">
+                    <li>Bên B đã kiểm tra xe mới 100%, không trầy xước, phụ tùng theo xe đầy đủ.</li>
+                    <li>Bên B đã được bên A hướng dẫn sử dụng xe, chế độ bảo hành và kỹ năng lái xe an toàn, nhận quà khuyến mãi đầy đủ, bên B đã đọc và xác nhận những nội dung trên.</li>
+                    <li>Biên nhận được lập thành 02 bản có giá trị như nhau , mỗi bên giữ 1 bản</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
 
         <!-- CHỮ KÝ -->
         <table style="margin-top: 25px; text-align: center; font-size: 11pt;">
